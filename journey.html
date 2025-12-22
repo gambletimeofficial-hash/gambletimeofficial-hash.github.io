@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Journey | August Schulz</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+</head>
+
+<div class="modal" id="jobModal">
+  <div class="modal-content" id="modalContent">
+    <h3 id="modalTitle"></h3>
+    <p id="modalRole"></p>
+    <p id="modalText"></p>
+    <button class="btn primary" onclick="closeModal()">Close</button>
+  </div>
+</div>
+<body>
+
+<header class="navbar">
+  <h2>
+  <a class="zendotsfontbold textfix logo" href="index.html">August.</a>
+  </h2>
+  <nav>
+    <a class="zendotsfont" href="index.html">Home</a>
+    <a class="zendotsfont" href="journey.html">Journey</a>
+    <a class="zendotsfont" href="journey.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="journey">
+  <h2>My IT Journey</h2>
+
+  <div class="timeline">
+    <div class="card"
+        data-title="Happyflow - Caballero fariek"
+        data-role="Dev-Ops Trainee (2022–2023)"
+        data-description="Served as team lead for two web applications. Coordinating new features and executing implementations. Worked on CI/CD pipelines, Linux-based infrastructure, and cloud deployments. Assisted senior engineers with automation, monitoring, and production support while learning DevOps best practices.">
+      <h3>Happyflow - Caballero fariek</h3>
+      <p>Dev-Ops Trainee (2022–2023)</p>
+    </div>
+    <div class="card"
+        data-title="EZ-Base - International Trade Center"
+        data-role="Data admin/specialist (2024–2026)"
+        data-description="Managed large datasets for European trade operations, performed data validation, reporting, and analysis. Hosting countless training sessions with agents from companies such as Akzonobel, Makita, Carhartt, Tricorp, WD-40. Guided onboarding and data integration trajectories while monitoring ongoing connections.">
+      <h3>EZ-Base - International trade center</h3>
+      <p>Data admin/specialist (2024–2026)</p>
+    </div>
+    <div class="card"
+        data-title="Leopardstats - The Hague"
+        data-role="Backend Developer (2024–present)"
+        data-description="Designed, developed and maintained backend services, APIs, and database schemas. 
+        Focused on performance optimization, scalability, and clean architecture.">
+      <h3>Leopardstats - The Hague</h3>
+      <p>Backend developer (2024–present)</p>
+    </div>
+    <div class="card"
+        data-title="Powerofreclection - Nootdorp"
+        data-role="Dev-ops (2025-2026)"
+        data-description="Handling security and backend features such as payment processing.">
+      <h3>Power of reclection - Nootdorp</h3>
+      <p>Backend developer (2025-2026)</p>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill">
+      <span>Web developing</span>
+      <div class="bar"><div data-skill="90"></div></div>
+    </div>
+    <div class="skill">
+      <span>Linux/Unix sysadmin</span>
+      <div class="bar"><div data-skill="75"></div></div>
+    </div>
+    <div class="skill">
+      <span>Technical training/support specialist</span>
+      <div class="bar"><div data-skill="80"></div></div>
+    </div>
+    <div class="skill">
+      <span>Documentation specialist</span>
+      <div class="bar"><div data-skill="77"></div></div>
+    </div>
+    <div class="skill">
+      <span>Data analytic skills</span>
+      <div class="bar"><div data-skill="70"></div></div>
+    </div>
+    <div class="skill">
+      <span>App architecture</span>
+      <div class="bar"><div data-skill="60"></div></div>
+    </div>
+    <div class="skill">
+      <span>Prioritising skills</span>
+      <div class="bar"><div data-skill="75"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+
+  <form id="contact-form">
+    <label for="name">Name</label>
+    <input type="text" placeholder="Full Name" id="name" name="name" required>
+    <label for="email">Email</label>
+    <input type="email" placeholder="Email Address" id="email" name="email" required>
+    <label for="message">Message</label>
+    <textarea placeholder="Your Message" id="message" name="message"></textarea>
+    <button class="btn primary" type="submit">Submit</button>
+  </form>
+</section>
+
+<script src="js/script1.js"></script>
+<script src="js/contactform.js"></script>
+</body>
+</html>

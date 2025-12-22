@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #ededed;
+  line-height: 1.6;
+}
+
+.zendotsfontbold {
+  font-family: 'Zen Dots', sans-serif; 
+  font-weight: 700;  
+}
+
+.zendotsfont {
+  font-family: 'Zen Dots', sans-serif; 
+  font-weight: 550;  
+  font-size: small;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.logo {
+  color: #00abf0;
+}
+
+.textfix {
+  text-decoration: none;
+}
+
+.navbar nav {
+  margin-left: 20px;
+  color: #ededed;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  color: #ededed;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 
+  color 0.3s ease,
+  text-shadow 0.3s ease,
+  transform 0.2s ease;
+}
+
+/* ================= NAVBAR HOVER EFFECT ================= */
+
+.navbar nav a {
+  transition: 
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.navbar nav a:hover {
+  font-family: 'Zen Dots', sans-serif;
+  font-weight: 700;
+  color: #00abf0;
+  text-shadow: 0 0 8px rgba(0, 172, 240, 0.573);
+  transform: translateY(-1px);
+}
+
+/* ================= JOURNEY CARD INTERACTION ================= */
+
+.card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 171, 240, 0.25);
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+}
+
+.hero-text h1 span {
+  color: #00abf0;
+}
+
+.hero-text h3 {
+  margin: 10px 0;
+  color: #00abf0;
+}
+
+.hero-text p {
+  max-width: 500px;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons .btn {
+  margin-right: 15px;
+}
+
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+#modalRole {
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 15px;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.primary {
+  background: #00abf0;
+  color: #081b29;
+}
+
+.primary outline {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.primary:hover {
+  background-color: #4cc6fb; /* light grey */
+  color: #081b29;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  filter: brightness(0.95);
+}
+
+.outline:hover {
+  background-color: #112e42; /* light grey */
+  color: #dbe0e3;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  filter: brightness(0.95);
+}
+
+.outline {
+  border: 2px solid #00abf0;
+  color: #00abf0;
+}
+
+/* ================= SECTIONS ================= */
+.about,
+.journey,
+.skills,
+.contact {
+  padding: 80px 10%;
+}
+
+.about h2,
+.journey h2,
+.skills h2,
+.contact h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ================= ABOUT ================= */
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.about-content img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* ================= JOURNEY ================= */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #112e42;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* ================= SKILLS ================= */
+.skills-grid {
+  max-width: 600px;
+  margin: auto;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.bar {
+  background: #112e42;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar div {
+  height: 100%;
+  background: #00abf0;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+/* ================= CONTACT ================= */
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact input,
+.contact textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    margin: 0 10px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-buttons .btn {
+    margin: 10px 5px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .about-content img {
+    width: 160px;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 8px 18px;
+  }
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #112e42;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(0, 171, 240, 0.4);
+  animation: pop 0.3s ease;
+}
+
+.modal-content h3 {
+  color: #00abf0;
+  margin-bottom: 10px;
+}
+
+.modal-content button {
+  margin-top: 20px;
+}
+
+/* subtle animation */
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
