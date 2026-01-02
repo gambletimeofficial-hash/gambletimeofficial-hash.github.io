@@ -11,10 +11,10 @@ document
       .sendForm("service_qb0hd3a", "template_dflhdyl", this)
       .then(
         function () {
-          alert("Message sent successfully!");
+          alert("Contact form has been send.");
         },
         function (error) {
-          alert("Failed to send message. Please try again.");
+          alert("Failed to send contact form. Please try again later.");
           console.error(error);
         }
       );
