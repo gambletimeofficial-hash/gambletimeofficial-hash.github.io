@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ================= JOURNEY MODAL ================= */
-  const modal = document.getElementById("jobModal");
-  const modalContent = document.getElementById("modalContent");
+  const jobModal = document.getElementById("jobModal");
+  const jobModalContent = document.getElementById("modalContent");
 
   document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", () => {
@@ -17,18 +17,37 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("modalRole").innerText = card.dataset.role;
       document.getElementById("modalText").innerText = card.dataset.description;
 
-      modal.style.display = "flex";
+      jobModal.style.display = "flex";
     });
   });
 
-  /* Close modal when clicking outside */
-  modal.addEventListener("click", (e) => {
-    if (!modalContent.contains(e.target)) {
+  jobModal?.addEventListener("click", (e) => {
+    if (!jobModalContent.contains(e.target)) {
       closeModal();
+    }
+  });
+
+  /* ================= HIRE ME MODAL ================= */
+  const hireBtn = document.getElementById("hireBtn");
+  const hireModal = document.getElementById("hireModal");
+  const hireModalContent = document.getElementById("hireModalContent");
+
+  hireBtn?.addEventListener("click", () => {
+    hireModal.style.display = "flex";
+  });
+
+  hireModal?.addEventListener("click", (e) => {
+    if (!hireModalContent.contains(e.target)) {
+      closeHireModal();
     }
   });
 });
 
+/* ================= CLOSE FUNCTIONS ================= */
 function closeModal() {
   document.getElementById("jobModal").style.display = "none";
+}
+
+function closeHireModal() {
+  document.getElementById("hireModal").style.display = "none";
 }
