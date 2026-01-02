@@ -148,6 +148,10 @@ body {
   background: #081b29;
 }
 
+.btnup {
+  margin-top: 10px;
+}
+
 .primary {
   background: #00abf0;
   color: #081b29;
@@ -250,7 +254,7 @@ body {
 
 .flexit {
   display: flex;
-  gap: 10px;
+  gap: 13px;
 }
 
 /* ================= CONTACT ================= */
