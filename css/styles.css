@@ -1,571 +1,376 @@
-/* =========================
-   RESET & BASE
-========================= */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    background: #fbf6e6;
-    font-family: Georgia, serif;
-    color: #f0b93a;
+  background: #081b29;
+  color: #ededed;
+  line-height: 1.6;
 }
 
-.container {
-    display: flex;
-    min-height: 100vh;
+.zendotsfontbold {
+  font-family: 'Zen Dots', sans-serif; 
+  font-weight: 700;  
 }
 
-/* =========================
-   SIDEBAR / MENU
-========================= */
+.zendotsfont {
+  font-family: 'Zen Dots', sans-serif; 
+  font-weight: 550;  
+  font-size: small;
+}
 
-.sidebar {
-    width: 260px;
-    padding: 40px 30px;
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
 }
 
 .logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 48px;
-    color: #000;
-    line-height: 1;
-    margin-bottom: 40px;
-    max-width: 250px;
+  color: #00abf0;
 }
 
-/* MENU LINKS */
-.menu a {
-    position: relative;
-    display: inline-block;
-    font-size: 22px;
-    text-decoration: none;
-    color: #f0b93a;
-    margin: 14px 0;
-    padding: 10px 22px 10px 18px;
-    z-index: 1;
+.textfix {
+  text-decoration: none;
 }
 
-/* pill background */
-.menu a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #f6d04d;
-    border-radius: 30px 30px 6px 30px;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.2s ease;
+.navbar nav {
+  margin-left: 20px;
+  color: #ededed;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.menu a:hover {
-    color: #fff;
+.navbar nav a {
+  margin-left: 20px;
+  color: #ededed;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 
+  color 0.3s ease,
+  text-shadow 0.3s ease,
+  transform 0.2s ease;
 }
 
-/* arrow tip */
-.menu a::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-left: 14px solid #f6d04d;
-    border-top: 14px solid transparent;
-    border-bottom: 14px solid transparent;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+/* ================= NAVBAR HOVER EFFECT ================= */
+
+.navbar nav a {
+  transition: 
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.2s ease;
 }
 
-/* hover + active */
-.menu a:hover::before,
-.menu a:hover::after,
-.menu a.active::before,
-.menu a.active::after {
-    opacity: 1;
+.navbar nav a:hover {
+  font-family: 'Zen Dots', sans-serif;
+  font-weight: 700;
+  color: #00abf0;
+  text-shadow: 0 0 8px rgba(0, 172, 240, 0.573);
+  transform: translateY(-1px);
 }
 
-.menu a.active {
-    color: #fff;
+/* ================= JOURNEY CARD INTERACTION ================= */
+
+.card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* SOCIALS */
-.socials {
-    margin-top: 40px;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 171, 240, 0.25);
 }
 
-.socials a {
-    margin-right: 12px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #f0b93a;
+/* ================= HERO ================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
 }
 
-/* =========================
-   MAIN CONTENT
-========================= */
-
-main {
-    flex: 1;
-    padding: 50px;
+.hero-text h1 {
+  font-size: 42px;
 }
 
-/* =========================
-   CONTACT PAGE
-========================= */
-
-.contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 40px;
+.hero-text h1 span {
+  color: #00abf0;
 }
 
-.contact-form {
-    border: 2px solid #f6d04d;
-    border-radius: 16px;
-    padding: 30px;
-    background: #fff9e8;
+.hero-text h3 {
+  margin: 10px 0;
+  color: #00abf0;
 }
 
-.contact-form h2 {
-    margin-bottom: 20px;
+.hero-text p {
+  max-width: 500px;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #f6d04d;
-    background: #fffdf3;
-    font-family: inherit;
+.hero-buttons {
+  margin-top: 20px;
 }
 
-.contact-form textarea {
-    resize: vertical;
-    min-height: 100px;
+.hero-buttons .btn {
+  margin-right: 15px;
 }
 
-.contact-form button {
-    width: 100%;
-    background: #f6d04d;
-    border: none;
-    padding: 12px;
-    border-radius: 20px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+.hero-image img {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 50%;
 }
 
-/* right contact box */
-.contact-box {
-    background: #f6d04d;
-    border-radius: 20px;
-    padding: 20px;
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.6;
+#modalRole {
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 15px;
 }
 
-/* review */
-.review {
-    background: #fff3cc;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #8a6a00;
+/* ================= BUTTONS ================= */
+.btn {
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  background: #081b29;
 }
 
-/* =========================
-   PORTFOLIO PAGE
-========================= */
-
-/* =========================
-   PORTFOLIO IMAGE VIEW
-========================= */
-
-.view-btn {
-    position: absolute;
-    bottom: 7px;
-    right: 14px;
-    color: white;
-    font-size: 14px;
-    padding: 6px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+.btnup {
+  margin-top: 10px;
 }
 
-.card:hover .view-btn {
-    opacity: 1;
+.primary {
+  background: #00abf0;
+  color: #081b29;
 }
 
-.thumb:hover {
-    cursor: pointer;
+.primary outline {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
-/* popup */
-.image-popup {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+.primary:hover {
+  background-color: #4cc6fb; /* light grey */
+  color: #081b29;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  filter: brightness(0.95);
 }
 
-.image-popup img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-    border-radius: 6px;
+.outline:hover {
+  background-color: #112e42; /* light grey */
+  color: #dbe0e3;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+  filter: brightness(0.95);
 }
 
-.image-popup.close {
-    display: none;
+.outline {
+  border: 2px solid #00abf0;
+  color: #00abf0;
 }
 
-/* =========================
-   PORTFOLIO FOLDERS
-========================= */
-
-.portfolio-folder {
-    position: relative;
-    cursor: pointer;
-    aspect-ratio: 4 / 3;
-    border-radius: 6px;
+/* ================= SECTIONS ================= */
+.about,
+.journey,
+.skills,
+.contact {
+  padding: 80px 10%;
 }
 
-.portfolio-folder {
-    background: transparent;
+.about h2,
+.journey h2,
+.skills h2,
+.contact h2 {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.portfolio-folder .thumb {
-    width: 100%;
-    height: 100%;
+/* ================= ABOUT ================= */
+.about-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 100px;
 }
 
-.portfolio-folder .folder-label {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 12px;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
+.about-content img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 50%;
 }
 
-.portfolio-folder .folder-label {
-    z-index: 5;
-}
-
-.portfolio-folder:hover {
-    transform: translateY(-2px);
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 24px;
-}
-
-#portfolioGrid {
-    margin-top: 40px;
-}
-
-.portfolio-group {
-    margin-bottom: 60px;
-}
-
-.portfolio-group h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.portfolio-grid-inner {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.portfolio-grid.expanded {
-    display: block;
-}
-
-/* stacked preview inside folder */
-.portfolio-folder .stack {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.portfolio-folder .stack .thumb {
-    position: absolute;
-    inset: 0;
-    border-radius: 6px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* offsets for stacked effect */
-.portfolio-folder .stack .thumb:nth-child(1) {
-    transform: translate(0, 0);
-    z-index: 3;
-}
-
-.portfolio-folder .stack .thumb:nth-child(2) {
-    transform: translate(6px, 6px);
-    opacity: 0.85;
-    z-index: 2;
-}
-
-.portfolio-folder .stack .thumb:nth-child(3) {
-    transform: translate(12px, 12px);
-    opacity: 0.7;
-    z-index: 1;
-}
-
-
-.back-link {
-    display: inline-block;
-    margin-bottom: 20px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #000;
-}
-
-.back-link:hover {
-    text-decoration: none;
+/* ================= JOURNEY ================= */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .card {
-    position: relative;
-    background: #f6d04d;
-    border-radius: 12px;
-    padding-bottom: 10px;
-    padding-top: 6px;
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
+  background: #112e42;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.card span {
-    font-size: 12px;
-    color: #fff;
+/* ================= SKILLS ================= */
+.skills-grid {
+  max-width: 600px;
+  margin: auto;
 }
 
-.thumb {
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: 6px;
-    height: 120px;
-    border-radius: 6px;
+.skill {
+  margin-bottom: 20px;
 }
 
-/* =========================
-   IMAGE LOADER
-========================= */
-
-.loader {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    z-index: 10;
+.bar {
+  background: #112e42;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.loader::after {
-    content: "";
-    width: 28px;
-    height: 28px;
-    border: 3px solid #e6e6e6;
-    border-top-color: #f6d04d;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
+.bar div {
+  height: 100%;
+  background: #00abf0;
+  width: 0;
+  border-radius: 10px;
+  transition: width 1s ease;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.flexit {
+  display: flex;
+  gap: 13px;
 }
 
-/* =========================
-   REVIEW CAROUSEL
-========================= */
-
-.review {
-    position: relative;
-    overflow: hidden;
+/* ================= CONTACT ================= */
+.contact form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.review-content {
-    transition: opacity 0.3s ease;
+.contact input,
+.contact textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
 }
 
-.review-stars {
-    margin-bottom: 10px;
-    color: #f6d04d;
-}
-
-.review-text {
-    margin-bottom: 12px;
-}
-
-.review-controls {
-    position: absolute;
-    bottom: 12px;
-    right: 14px;
-    display: flex;
-    gap: 6px;
-}
-
-.review-controls button {
-    background: #f6d04d;
-    border: none;
-    color: #fff;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
-}
-
-.home-grid {
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* =========================
-   RESPONSIVE (MOBILE)
-========================= */
-
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
 
-    .menu a::before {
-        border-radius: 15px;
-    }
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .contact-layout > div:last-child {
-        display: flex;
-        gap: 12px;
-    }
+  .navbar nav a {
+    margin: 0 10px;
+  }
 
-    .contact-box,
-    .review {
-        flex: 1;
-    }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 60px 5%;
+  }
 
-    .container {
-        flex-direction: column;
-    }
+  .hero-text h1 {
+    font-size: 32px;
+  }
 
-    /* sidebar stacks vertically */
-    .sidebar {
-        width: 100%;
-        padding: 24px 20px;
-        display: block;
-        text-align: center;
-    }
+  .hero-buttons .btn {
+    margin: 10px 5px;
+  }
 
-    .logo {
-        font-size: 36px;
-        margin-bottom: 16px;
-    }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+  }
 
-    /* MENU UNDER LOGO, HORIZONTAL */
-    .menu {
-        display: flex;
-        justify-content: center;
-        gap: 6px;
-    }
+  .about-content img {
+    width: 160px;
+  }
 
-    .menu a {
-        margin: 0;
-        font-size: 20px;
-        padding: 8px 14px;
-    }
+  .timeline {
+    grid-template-columns: 1fr;
+  }
 
-    /* remove arrow tip on mobile */
-    .menu a::after {
-        display: none;
-    }
-
-    .socials {
-        margin-top: 16px;
-        text-align: center;
-    }
-
-    main {
-        padding: 30px 20px;
-    }
-
-    .contact-layout {
-        grid-template-columns: 1fr;
-    }
+  .skills-grid {
+    width: 100%;
+  }
 }
 
-/* =========================
-   VERY SMALL PHONES
-========================= */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 26px;
+  }
 
-@media (max-width: 420px) {
+  .hero-text p {
+    font-size: 14px;
+  }
 
-    /* FOLDER VIEW */
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
+  .btn {
+    padding: 8px 18px;
+  }
+}
 
-    /* IMAGE VIEW */
-    .portfolio-grid-inner {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
+/* ================= MODAL ================= */
 
-    .thumb {
-        height: 110px;
-    }
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
 
-    .card {
-    position: relative;
-    background: #f6d04d;
-    border-radius: 12px;
-    padding-bottom: 3px;
-    padding-top: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    box-sizing: border-box;
-    }
+.modal-content {
+  background: #112e42;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(0, 171, 240, 0.4);
+  animation: pop 0.3s ease;
+}
 
-    .menu {
-        flex-wrap: wrap;
-        gap: 4px;
-    }
+.modal-content h3 {
+  color: #00abf0;
+  margin-bottom: 10px;
+}
 
-    .menu a {
-        font-size: 16px;
-        padding: 6px 10px;
-        white-space: nowrap;
-    }
+.modal-content button {
+  margin-top: 20px;
+}
 
-    .menu a::before {
-        border-radius: 30px; /* keep your pill look */
-    }
+/* subtle animation */
+@keyframes pop {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
