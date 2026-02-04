@@ -1,376 +1,571 @@
+/* =========================
+   RESET & BASE
+========================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #081b29;
-  color: #ededed;
-  line-height: 1.6;
+    background: #fbf6e6;
+    font-family: Georgia, serif;
+    color: #f0b93a;
 }
 
-.zendotsfontbold {
-  font-family: 'Zen Dots', sans-serif; 
-  font-weight: 700;  
+.container {
+    display: flex;
+    min-height: 100vh;
 }
 
-.zendotsfont {
-  font-family: 'Zen Dots', sans-serif; 
-  font-weight: 550;  
-  font-size: small;
-}
+/* =========================
+   SIDEBAR / MENU
+========================= */
 
-/* ================= NAVBAR ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
+.sidebar {
+    width: 260px;
+    padding: 40px 30px;
 }
 
 .logo {
-  color: #00abf0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 40px;
+    max-width: 250px;
 }
 
-.textfix {
-  text-decoration: none;
+/* MENU LINKS */
+.menu a {
+    position: relative;
+    display: inline-block;
+    font-size: 22px;
+    text-decoration: none;
+    color: #f0b93a;
+    margin: 14px 0;
+    padding: 10px 22px 10px 18px;
+    z-index: 1;
 }
 
-.navbar nav {
-  margin-left: 20px;
-  color: #ededed;
-  text-decoration: none;
-  font-size: 16px;
+/* pill background */
+.menu a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #f6d04d;
+    border-radius: 30px 30px 6px 30px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.2s ease;
 }
 
-.navbar nav a {
-  margin-left: 20px;
-  color: #ededed;
-  text-decoration: none;
-  font-size: 15px;
-  transition: 
-  color 0.3s ease,
-  text-shadow 0.3s ease,
-  transform 0.2s ease;
+.menu a:hover {
+    color: #fff;
 }
 
-/* ================= NAVBAR HOVER EFFECT ================= */
-
-.navbar nav a {
-  transition: 
-    color 0.3s ease,
-    text-shadow 0.3s ease,
-    transform 0.2s ease;
+/* arrow tip */
+.menu a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 14px solid #f6d04d;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
-.navbar nav a:hover {
-  font-family: 'Zen Dots', sans-serif;
-  font-weight: 700;
-  color: #00abf0;
-  text-shadow: 0 0 8px rgba(0, 172, 240, 0.573);
-  transform: translateY(-1px);
+/* hover + active */
+.menu a:hover::before,
+.menu a:hover::after,
+.menu a.active::before,
+.menu a.active::after {
+    opacity: 1;
 }
 
-/* ================= JOURNEY CARD INTERACTION ================= */
+.menu a.active {
+    color: #fff;
+}
+
+/* SOCIALS */
+.socials {
+    margin-top: 40px;
+}
+
+.socials a {
+    margin-right: 12px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #f0b93a;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+main {
+    flex: 1;
+    padding: 50px;
+}
+
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 40px;
+}
+
+.contact-form {
+    border: 2px solid #f6d04d;
+    border-radius: 16px;
+    padding: 30px;
+    background: #fff9e8;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #f6d04d;
+    background: #fffdf3;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    background: #f6d04d;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* right contact box */
+.contact-box {
+    background: #f6d04d;
+    border-radius: 20px;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* review */
+.review {
+    background: #fff3cc;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #8a6a00;
+}
+
+/* =========================
+   PORTFOLIO PAGE
+========================= */
+
+/* =========================
+   PORTFOLIO IMAGE VIEW
+========================= */
+
+.view-btn {
+    position: absolute;
+    bottom: 7px;
+    right: 14px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.card:hover .view-btn {
+    opacity: 1;
+}
+
+.thumb:hover {
+    cursor: pointer;
+}
+
+/* popup */
+.image-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.image-popup img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    border-radius: 6px;
+}
+
+.image-popup.close {
+    display: none;
+}
+
+/* =========================
+   PORTFOLIO FOLDERS
+========================= */
+
+.portfolio-folder {
+    position: relative;
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+}
+
+.portfolio-folder {
+    background: transparent;
+}
+
+.portfolio-folder .thumb {
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-folder .folder-label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+.portfolio-folder .folder-label {
+    z-index: 5;
+}
+
+.portfolio-folder:hover {
+    transform: translateY(-2px);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+#portfolioGrid {
+    margin-top: 40px;
+}
+
+.portfolio-group {
+    margin-bottom: 60px;
+}
+
+.portfolio-group h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.portfolio-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-grid.expanded {
+    display: block;
+}
+
+/* stacked preview inside folder */
+.portfolio-folder .stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-folder .stack .thumb {
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* offsets for stacked effect */
+.portfolio-folder .stack .thumb:nth-child(1) {
+    transform: translate(0, 0);
+    z-index: 3;
+}
+
+.portfolio-folder .stack .thumb:nth-child(2) {
+    transform: translate(6px, 6px);
+    opacity: 0.85;
+    z-index: 2;
+}
+
+.portfolio-folder .stack .thumb:nth-child(3) {
+    transform: translate(12px, 12px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000;
+}
+
+.back-link:hover {
+    text-decoration: none;
+}
 
 .card {
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background: #f6d04d;
+    border-radius: 12px;
+    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(0, 171, 240, 0.25);
+.card span {
+    font-size: 12px;
+    color: #fff;
 }
 
-/* ================= HERO ================= */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 80px 10%;
-  gap: 40px;
+.thumb {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    height: 120px;
+    border-radius: 6px;
 }
 
-.hero-text h1 {
-  font-size: 42px;
+/* =========================
+   IMAGE LOADER
+========================= */
+
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    z-index: 10;
 }
 
-.hero-text h1 span {
-  color: #00abf0;
+.loader::after {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border: 3px solid #e6e6e6;
+    border-top-color: #f6d04d;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
 }
 
-.hero-text h3 {
-  margin: 10px 0;
-  color: #00abf0;
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
-.hero-text p {
-  max-width: 500px;
+/* =========================
+   REVIEW CAROUSEL
+========================= */
+
+.review {
+    position: relative;
+    overflow: hidden;
 }
 
-.hero-buttons {
-  margin-top: 20px;
+.review-content {
+    transition: opacity 0.3s ease;
 }
 
-.hero-buttons .btn {
-  margin-right: 15px;
+.review-stars {
+    margin-bottom: 10px;
+    color: #f6d04d;
 }
 
-.hero-image img {
-  width: 300px;
-  max-width: 100%;
-  border-radius: 50%;
+.review-text {
+    margin-bottom: 12px;
 }
 
-#modalRole {
-  font-style: italic;
-  opacity: 0.85;
-  margin-bottom: 15px;
+.review-controls {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    display: flex;
+    gap: 6px;
 }
 
-/* ================= BUTTONS ================= */
-.btn {
-  padding: 10px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  background: #081b29;
+.review-controls button {
+    background: #f6d04d;
+    border: none;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
 }
 
-.btnup {
-  margin-top: 10px;
+.home-grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.primary {
-  background: #00abf0;
-  color: #081b29;
-}
+/* =========================
+   RESPONSIVE (MOBILE)
+========================= */
 
-.primary outline {
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease,
-    filter 0.25s ease;
-}
-
-.primary:hover {
-  background-color: #4cc6fb; /* light grey */
-  color: #081b29;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
-  filter: brightness(0.95);
-}
-
-.outline:hover {
-  background-color: #112e42; /* light grey */
-  color: #dbe0e3;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
-  filter: brightness(0.95);
-}
-
-.outline {
-  border: 2px solid #00abf0;
-  color: #00abf0;
-}
-
-/* ================= SECTIONS ================= */
-.about,
-.journey,
-.skills,
-.contact {
-  padding: 80px 10%;
-}
-
-.about h2,
-.journey h2,
-.skills h2,
-.contact h2 {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-/* ================= ABOUT ================= */
-.about-content {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.about-content img {
-  width: 200px;
-  max-width: 100%;
-  border-radius: 50%;
-}
-
-/* ================= JOURNEY ================= */
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #112e42;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* ================= SKILLS ================= */
-.skills-grid {
-  max-width: 600px;
-  margin: auto;
-}
-
-.skill {
-  margin-bottom: 20px;
-}
-
-.bar {
-  background: #112e42;
-  height: 10px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.bar div {
-  height: 100%;
-  background: #00abf0;
-  width: 0;
-  border-radius: 10px;
-  transition: width 1s ease;
-}
-
-.flexit {
-  display: flex;
-  gap: 13px;
-}
-
-/* ================= CONTACT ================= */
-.contact form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact input,
-.contact textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
 
-  .navbar {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .menu a::before {
+        border-radius: 15px;
+    }
 
-  .navbar nav a {
-    margin: 0 10px;
-  }
+    .contact-layout > div:last-child {
+        display: flex;
+        gap: 12px;
+    }
 
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    padding: 60px 5%;
-  }
+    .contact-box,
+    .review {
+        flex: 1;
+    }
 
-  .hero-text h1 {
-    font-size: 32px;
-  }
+    .container {
+        flex-direction: column;
+    }
 
-  .hero-buttons .btn {
-    margin: 10px 5px;
-  }
+    /* sidebar stacks vertically */
+    .sidebar {
+        width: 100%;
+        padding: 24px 20px;
+        display: block;
+        text-align: center;
+    }
 
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-    margin-top: 40px;
-  }
+    .logo {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
 
-  .about-content img {
-    width: 160px;
-  }
+    /* MENU UNDER LOGO, HORIZONTAL */
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+    }
 
-  .timeline {
-    grid-template-columns: 1fr;
-  }
+    .menu a {
+        margin: 0;
+        font-size: 20px;
+        padding: 8px 14px;
+    }
 
-  .skills-grid {
-    width: 100%;
-  }
+    /* remove arrow tip on mobile */
+    .menu a::after {
+        display: none;
+    }
+
+    .socials {
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 26px;
-  }
+/* =========================
+   VERY SMALL PHONES
+========================= */
 
-  .hero-text p {
-    font-size: 14px;
-  }
+@media (max-width: 420px) {
 
-  .btn {
-    padding: 8px 18px;
-  }
-}
+    /* FOLDER VIEW */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
 
-/* ================= MODAL ================= */
+    /* IMAGE VIEW */
+    .portfolio-grid-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
+    .thumb {
+        height: 110px;
+    }
 
-.modal-content {
-  background: #112e42;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 0 25px rgba(0, 171, 240, 0.4);
-  animation: pop 0.3s ease;
-}
+    .card {
+    position: relative;
+    background: #f6d04d;
+    border-radius: 12px;
+    padding-bottom: 3px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    }
 
-.modal-content h3 {
-  color: #00abf0;
-  margin-bottom: 10px;
-}
+    .menu {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
 
-.modal-content button {
-  margin-top: 20px;
-}
+    .menu a {
+        font-size: 16px;
+        padding: 6px 10px;
+        white-space: nowrap;
+    }
 
-/* subtle animation */
-@keyframes pop {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    .menu a::before {
+        border-radius: 30px; /* keep your pill look */
+    }
 }
